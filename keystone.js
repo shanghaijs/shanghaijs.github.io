@@ -15,8 +15,8 @@ var keystone = require('keystone'),
 
 keystone.init({
 
-	'name': 'shagnhaijs',
-	'brand': 'shagnhaijs',
+	'name': 'shanghaijs',
+	'brand': 'shanghaijs',
 	'back': '/me',
 
 	'favicon': 'public/favicon.ico',
@@ -36,7 +36,7 @@ keystone.init({
 	'session store': 'mongo',
 	'auth': true,
 	'user model': 'User',
-	'cookie secret': process.env.COOKIE_SECRET || 'shagnhaijs',
+	'cookie secret': process.env.COOKIE_SECRET || 'shanghaijs',
 
 	'mandrill api key': process.env.MANDRILL_KEY,
 
@@ -75,8 +75,8 @@ keystone.set('locals', {
 keystone.set('email locals', {
 	utils: keystone.utils,
 	host: (function() {
-		if (keystone.get('env') === 'staging') return 'http://shagnhaijs-beta.herokuapp.com';
-		if (keystone.get('env') === 'production') return 'http://www.shagnhaijs.com';
+		if (keystone.get('env') === 'staging') return 'http://shanghaijs-beta.herokuapp.com';
+		if (keystone.get('env') === 'production') return 'http://www.shanghaijs.com';
 		return (keystone.get('host') || 'http://localhost:') + (keystone.get('port') || '3000');
 	})()
 });

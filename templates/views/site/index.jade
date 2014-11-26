@@ -15,7 +15,7 @@ block intro
 		h2.text-center You've just deployed a new site! Go add some data :)
 	else
 		article#hero.hero-meetup.hero-meetup--next
-			
+
 			//- Intro
 			section.hero-intro.hero-intro--hasmask
 				.hero-background
@@ -24,13 +24,13 @@ block intro
 					h5.subtitle #{meetup.state == 'active' ? 'Next' : 'Last'} Meetup
 					h1.title= meetup.name
 					p.byline: strong #{meetup._.startDate.format('ddd, DD MMM YYYY')} &#8212; #{meetup._.startDate.format('h:mma')} - #{meetup._.endDate.format('h:mma')}
-					p.byline #{meetup.place} &#8212; 
+					p.byline #{meetup.place} &#8212;
 						a(href='http://maps.google.com.au/?daddr=' + (meetup.map || meetup.place), target='_blank') Directions
 				if meetup.state == 'active'
 					.hero-button
 						if user
 							if meetup.rsvpsAvailable || rsvpStatus.rsvped && rsvpStatus.attending
-								h4.hero-button-title Are you coming? 
+								h4.hero-button-title Are you coming?
 									span.text-thin (#{plural(meetup.remainingRSVPs, '* spot left', '* spots left')})
 								include ../../includes/attendance-toggle
 							else
@@ -39,15 +39,15 @@ block intro
 						else
 							#next-meetup(data-id=meetup.id)
 								if meetup.rsvpsAvailable
-									a(href='/join', data-from=page.path).btn.btn-primary.btn-lg.btn-block.js-auth-trigger RSVP Now 
+									a(href='/join', data-from=page.path).btn.btn-primary.btn-lg.btn-block.js-auth-trigger RSVP Now
 										span.text-thin (#{plural(meetup.remainingRSVPs, '* spot left', '* spots left')})
 								else
 									.alert.alert-success.mb-0.text-center No more tickets...
-			
+
 			//- Details
 			section.hero-details: .container
 				.row: .col-sm-10.col-sm-offset-1: .row
-					
+
 					//- Description
 					.col-md-5
 						//- h3.mb-1 The meetup
@@ -75,11 +75,11 @@ block intro
 											.col-xs-9
 												.talk-summary
 													h5.title= talk.name
-													p.subtitle.mb-1 by 
+													p.subtitle.mb-1 by
 														each speaker, i in talk.who
 															if i
-																| , 
-															if speaker.isPublic 
+																| ,
+															if speaker.isPublic
 																a(href=speaker.url)=speaker.name.full
 															else
 																=speaker.name.full
@@ -99,10 +99,10 @@ block intro
 //- BODY
 block content
 	.page-content
-		
+
 		//- About
 		article.section.section--featured.home-about: .container
-			h2 In Sydney and into JavaScript? You need to join SydJS!
+			h2 In Shanghai and into JavaScript? You need to join ShanghaiJS!
 			.row: .col-sm-8.col-sm-offset-2
 				p.lead Every 3rd Wednesday of the month you'll find us talking about what we're doing and what's happening around us in the world of JavaScript.
 			if !user
@@ -111,7 +111,7 @@ block content
 						span.text-caps Join SydJS now
 			p.mt-1
 				a(href='/about') Learn more about SydJS
-				|  &nbsp;&middot;&nbsp; 
+				|  &nbsp;&middot;&nbsp;
 				a(href='/members') Find your friends in SydJS
 			p.mt-1: a(href="https://twitter.com/sydjs", class="twitter-follow-button", data-show-count="true", data-size="large") Follow @sydjs
 //- JS
