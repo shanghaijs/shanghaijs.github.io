@@ -5,12 +5,12 @@ var User = keystone.list('User'),
 	Organisation = keystone.list('Organisation');
 
 exports = module.exports = function(req, res) {
-	
+
 	var view = new keystone.View(req, res),
 		locals = res.locals;
-	
+
 	locals.section = 'showbag';
-	locals.page.title = 'SydJS Showbag';
+	locals.page.title = 'ShanghaiJS Showbag';
 
 	Organisation.model.findOne().where('key', 'thinkmill').exec(function(err, thinkmill) {
 		if (err || !thinkmill) {
@@ -22,5 +22,5 @@ exports = module.exports = function(req, res) {
 		view.render('site/showbag');
 
 	});
-	
+
 }

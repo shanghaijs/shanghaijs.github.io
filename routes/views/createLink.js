@@ -2,13 +2,13 @@ var keystone = require('keystone'),
 	Link = keystone.list('Link');
 
 exports = module.exports = function(req, res) {
-	
+
 	var view = new keystone.View(req, res),
 		locals = res.locals;
-	
+
 	locals.section = 'me';
-	locals.page.title = 'Add a link - SydJS';
-	
+	locals.page.title = 'Add a link - ShanghaiJS';
+
 	view.on('post', { action: 'add-link' }, function(next) {
 
 		// handle form
@@ -20,12 +20,12 @@ exports = module.exports = function(req, res) {
 			updater = newLink.getUpdateHandler(req, res, {
 				errorMessage: 'There was an error adding your link:'
 			});
-		
+
 		// automatically pubish posts by admin users
 		if (locals.user.isAdmin) {
 			newLink.state = 'published';
 		}
-		
+
 		updater.process(req.body, {
 			flashErrors: true,
 			logErrors: true,
@@ -41,7 +41,7 @@ exports = module.exports = function(req, res) {
 		});
 
 	});
-	
+
 	view.render('site/createLink');
-	
+
 }

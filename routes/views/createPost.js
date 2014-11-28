@@ -2,13 +2,13 @@ var keystone = require('keystone'),
 	Post = keystone.list('Post');
 
 exports = module.exports = function(req, res) {
-	
+
 	var view = new keystone.View(req, res),
 		locals = res.locals;
-	
+
 	locals.section = 'me';
-	locals.page.title = 'Create a blog post - SydJS';
-	
+	locals.page.title = 'Create a blog post - ShanghaiJS';
+
 	view.on('post', { action: 'create-post' }, function(next) {
 
 		// handle form
@@ -20,12 +20,12 @@ exports = module.exports = function(req, res) {
 			updater = newPost.getUpdateHandler(req, res, {
 				errorMessage: 'There was an error creating your new post:'
 			});
-		
+
 		// automatically pubish posts by admin users
 		if (locals.user.isAdmin) {
 			newPost.state = 'published';
 		}
-		
+
 		updater.process(req.body, {
 			flashErrors: true,
 			logErrors: true,
@@ -42,7 +42,7 @@ exports = module.exports = function(req, res) {
 		});
 
 	});
-	
+
 	view.render('site/createPost');
-	
+
 }
