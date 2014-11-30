@@ -9,11 +9,8 @@ exports = module.exports = function(req, res) {
 	locals.page.title = 'About ShanghaiJS';
 
 	locals.organisers = [
-		{ name: 'Fraser Xu', image: '/images/organiser-craig_sharkie.jpg', twitter: 'twalve',       title: 'Founder, MC, coordinator' },
-		// { name: 'Thinkmill', image: '/images/organiser-thinkmill.jpg',     twitter: 'thethinkmill', title: 'Site coordinator' },
-		{ name: 'Gil Davidson',     image: '/images/organiser-gil_davidson.jpg',     twitter: 'iamnotyourbroom',   title: 'Atlassian coordinator' },
-		{ name: 'Adam Ahmed',    image: '/images/organiser-adam_ahmed.jpg',    twitter: 'hitsthings',   title: 'Atlassian coordinator' },
-		{ name: 'Lachlan Hardy', image: '/images/organiser-lachlan_hardy.jpg', twitter: 'lachlanhardy', title: 'Community coordinator' }
+		{ name: 'Fraser Xu', image: '/images/organiser-fraserxu.jpeg', twitter: 'fraserxu',       title: 'JavaScript Developer' },
+		{ name: 'You?',     image: '/images/organiser-you.png',     twitter: 'yourname',   title: 'Become an organiser' }
 	]
 
 	view.render('site/about');
