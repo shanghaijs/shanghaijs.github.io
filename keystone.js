@@ -72,8 +72,6 @@ keystone.set('locals', {
 	chartbeat_domain: keystone.get('chartbeat domain')
 });
 
-console.log('env', process.env)
-
 keystone.set('email locals', {
 	utils: keystone.utils,
 	host: (function() {
