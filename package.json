@@ -1,0 +1,22 @@
+{
+  "name": "shanghaijs",
+  "version": "1.0.0",
+  "description": "Build with <3 from a bunch of JavaScript enthusiasts in Shanghai.",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shanghaijs/shanghaijs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shanghaijs/shanghaijs/issues"
+  },
+  "homepage": "https://github.com/shanghaijs/shanghaijs",
+  "devDependencies": {
+    "gh-pages": "^0.3.1"
+  }
+}
