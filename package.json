@@ -4,7 +4,8 @@
   "description": "Build with <3 from a bunch of JavaScript enthusiasts in Shanghai.",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d dist"
+    "build": "mkdir -p build && cp index.html build/",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
